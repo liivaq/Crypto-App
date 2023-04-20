@@ -1,8 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Models;
 
-class Crypto{
+class Crypto
+{
     private int $id;
     private string $name;
     private string $symbol;
