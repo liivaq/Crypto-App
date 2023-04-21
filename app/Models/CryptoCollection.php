@@ -22,8 +22,15 @@ class CryptoCollection
         }
     }
 
-    public function getCollection(): array
+    public function displayCollection(): void
     {
-        return $this->collection;
+        /** @var Crypto $crypto */
+        foreach ($this->collection as $crypto) {
+            echo '══════════════════════════════════' . PHP_EOL;
+            echo 'Name: ' . $crypto->getName() . PHP_EOL;
+            echo 'Symbol: ' . $crypto->getSymbol() . PHP_EOL;
+            echo 'ID: ' . $crypto->getId() . PHP_EOL;
+            echo 'Price in EUR: ' . number_format($crypto->getPrice(), 2) . PHP_EOL;
+        }
     }
 }
