@@ -11,10 +11,10 @@ class ApiClient
     private Client $client;
     private string $apiKey;
 
-    public function __construct($apiKey)
+    public function __construct()
     {
         $this->client = new Client();
-        $this->apiKey = $apiKey;
+        $this->apiKey = $_ENV['COIN_MARKET_CAP_API'];
     }
 
     public function getLatest($userInput): ?CryptoCollection

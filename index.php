@@ -9,10 +9,10 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $amount = (int)readline('Enter amount of cryptos you want to see: ');
-$cryptoCollection = (new ApiClient($_ENV['COIN_MARKET_CAP_API']))->getLatest($amount);
+$cryptoCollection = (new ApiClient())->getLatest($amount);
 
-if(!$cryptoCollection){
-    echo 'Wrong input'.PHP_EOL;
-}else{
+if (!$cryptoCollection) {
+    echo 'Wrong input!' . PHP_EOL;
+} else {
     $cryptoCollection->displayCollection();
 }
